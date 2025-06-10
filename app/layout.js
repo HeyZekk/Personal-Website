@@ -1,5 +1,8 @@
+<div className="fixed inset-0 -z-50 animate-gradient bg-gradient-to-br from-[#18181b] via-[#1e293b] to-[#22c55e] opacity-80"></div>;
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import BackgroundVector from "./components/BackgroundVector";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,9 +22,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="relative min-h-screen w-full overflow-x-hidden">
+        <BackgroundVector />
         {children}
       </body>
     </html>
