@@ -30,15 +30,27 @@ export default function SectionCards() {
       {sections.map((section, idx) => (
         <motion.div
           key={section.href}
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ delay: 0.2 * idx, duration: 0.7 }}
-          whileHover={{ scale: 1.05, boxShadow: "0 4px 32px #22c55e33" }}
-          className="bg-[#232323] rounded-xl p-6 w-72 flex flex-col items-center shadow-lg cursor-pointer hover:bg-[#1a1a1a] transition"
+          transition={{
+            delay: 0.08 * idx,
+            duration: 0.5,
+            ease: [0.4, 0, 0.2, 1],
+          }}
+          whileHover={{ scale: 1.045, boxShadow: "0 4px 32px #22c55e33" }}
+          whileTap={{ scale: 0.98 }}
+          className="bg-[#232323] rounded-xl p-6 w-72 flex flex-col items-center shadow-lg cursor-pointer hover:bg-[#1a1a1a] transition-all duration-300"
+          style={{ willChange: "transform" }}
         >
-          <div className="mb-3">{section.icon}</div>
+          <motion.div
+            whileHover={{ rotate: 2 }}
+            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            className="mb-3"
+          >
+            {section.icon}
+          </motion.div>
           <h3 className="text-xl font-bold text-white mb-2">{section.title}</h3>
           <p className="text-gray-300 text-center mb-4">
             {section.description}

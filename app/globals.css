@@ -33,22 +33,3 @@ body {
     background-position: 100% 50%;
   }
 }
-
-.bg-animated-gradient-once {
-  background: linear-gradient(
-    270deg,
-    #18181b,
-    #064e3b,
-    #0e766e,
-    #495057,
-    #232323,
-    #18181b
-  );
-  background-size: 400% 400%;
-  animation: moving-gradient-once 4s cubic-bezier(0.4, 0, 0.2, 1) 1;
-  opacity: 0.98;
-  position: fixed;
-  inset: 0;
-  z-index: -50;
-  transition: background 1s;
-}
