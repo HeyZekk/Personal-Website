@@ -26,12 +26,11 @@ const sections = [
 
 export default function SectionCards() {
   return (
-    <section className="flex flex-col sm:flex-row gap-6 justify-center items-center py-12">
+    <section className="flex flex-col sm:flex-row gap-6 justify-center items-center py-8 w-full">
       {sections.map((section, idx) => (
         <motion.div
           key={section.href}
           initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{
@@ -41,7 +40,7 @@ export default function SectionCards() {
           }}
           whileHover={{ scale: 1.045, boxShadow: "0 4px 32px #22c55e33" }}
           whileTap={{ scale: 0.98 }}
-          className="bg-[#232323] rounded-xl p-6 w-72 flex flex-col items-center shadow-lg cursor-pointer hover:bg-[#1a1a1a] transition-all duration-300"
+          className="bg-[#232323] rounded-xl p-6 w-full sm:w-72 flex flex-col items-center shadow-lg cursor-pointer hover:bg-[#1a1a1a] transition-all duration-300"
           style={{ willChange: "transform" }}
         >
           <motion.div

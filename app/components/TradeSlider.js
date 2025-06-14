@@ -70,8 +70,7 @@ export default function TradeSlider() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((current) => (current + 1) % slides.length);
-    }, 5000); // Her 5 saniyede bir değiştir
-
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
@@ -94,7 +93,6 @@ export default function TradeSlider() {
           </div>
         </motion.div>
       </AnimatePresence>
-      {/* Slider dots */}
       <div className="w-full flex justify-center items-center mt-4 absolute left-0 bottom-3">
         {slides.map((_, idx) => (
           <button
